@@ -7,6 +7,7 @@
     </head>
 
     <body>
+
         <div id="intro-screen">
             <h1 id="year-progress-text"></h1>
         </div>
@@ -14,31 +15,42 @@
         <div id="word-flow-container"></div>
 
         <div id="main-content" style="display: none">
-            <nav class="navibar">
-                <div class="navibar_logo">
-                    <img src="navibar_logo.png" alt="Logo">
-                </div>
-            </nav>
-            <div>
-                <p>기간 선택:</p>
-                <button onclick="setPeriod('daily')">일간</button>
-                <button onclick="setPeriod('weekly')">주간</button>
-                <button onclick="setPeriod('monthly')">월간</button>
-            </div>
-            <hr>
-            <div>
-                <p>카테고리 선택:</p>
-                <button onclick="setCategory('all')">전체</button>
-                <button onclick="setCategory('politics')">정치</button>
-                <button onclick="setCategory('entertainment')">연예</button>
-                <button onclick="setCategory('sports')">스포츠</button>
-            </div>
-            <hr>
-            <div id="word-flow-container"></div>
-            <footer>
-                <p>컴객 FE 노현두</p>
-            </footer>
+            <nav class="navibar" >
+            <div class="navibar_logo">
+            <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
+
+            </div>  
+            <ul>
+            <li>
+                <a href="#" class = "categori">기간</a>
+                <ul class="dropdown-content">
+                <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
+                <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
+                <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
+                <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"class = "categori">분야</a> 
+                <ul class="dropdown-content">
+                <li><a href="#" onclick="setPeriod('all')">전체</a></li>
+                <li><a href="#" onclick="setPeriod('entertainment')">연예</a></li>
+                <li><a href="#" onclick="setPeriod('politics')">정치</a></li>
+                <li><a href="#" onclick="setPeriod('sports')">스포츠</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+        <ul class ="main">
+        <div id="word-flow-container"></div>
+
+        <div class = "drop-target-left">
+            
+        </div>
+        </ul>
         </div>
         <script src="HOTscript.js"></script>
+
+
     </body>
 </html>
