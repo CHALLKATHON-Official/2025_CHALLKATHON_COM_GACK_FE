@@ -5,35 +5,53 @@
         <title>HOT! TOPIC</title>
         <link rel="stylesheet" href="Hot_style.css">
     </head>
+
     <body>
-        <nav class="navibar">
+
+        <div id="intro-screen">
+            <h1 id="year-progress-text"></h1>
+        </div>
+
+        <div id="word-flow-container"></div>
+
+        <div id="main-content" style="display: none">
+            <nav class="navibar" >
             <div class="navibar_logo">
-                <img src="navibar_logo.png" alt="Logo">
-            </div>
-            <ul class="navibar_menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">a</a></li>
-                <li><a href="#">b</a></li>
-                <li><a href="#">c</a></li>
+            <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
+
+            </div>  
+            <ul>
+            <li>
+                <a href="#" class = "categori">기간</a>
+                <ul class="dropdown-content">
+                <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
+                <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
+                <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
+                <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"class = "categori">분야</a> 
+                <ul class="dropdown-content">
+                <li><a href="#" onclick="setPeriod('all')">전체</a></li>
+                <li><a href="#" onclick="setPeriod('entertainment')">연예</a></li>
+                <li><a href="#" onclick="setPeriod('politics')">정치</a></li>
+                <li><a href="#" onclick="setPeriod('sports')">스포츠</a></li>
+                </ul>
+            </li>
             </ul>
         </nav>
-        <div>
-            <p>기간 선택:</p>
-            <button onclick="setPeriod('daily')">일간</button>
-            <button onclick="setPeriod('weekly')">주간</button>
-            <button onclick="setPeriod('monthly')">월간</button>
+        <ul class ="main">
+        <div id="word-flow-container"></div>
+
+        <div class = "drop-target-left">
+            
         </div>
-        <div>
-            <p>카테고리 선택:</p>
-            <button onclick="setCategory('all')">전체</button>
-            <button onclick="setCategory('politics')">정치</button>
-            <button onclick="setCategory('entertainment')">연예</button>
-            <button onclick="setCategory('sports')">스포츠</button>
+        </ul>
         </div>
         <hr>
         <div id="wordcloud">
             
         </div>
->>>>>>> 79b97e3c9872e218ed6ef3517375477276c22b76
     </body>
 </html>
