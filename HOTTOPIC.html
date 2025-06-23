@@ -6,7 +6,34 @@
         <link rel="stylesheet" href="Hot_style.css">
     </head>
     <body>
-        <h1>지금! 뭐가?</h1>
-
+        <nav class="navibar">
+            <div class="navibar_logo">
+                <img src="navibar_logo.png" alt="Logo">
+            </div>
+            <ul class="navibar_menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">a</a></li>
+                <li><a href="#">b</a></li>
+                <li><a href="#">c</a></li>
+            </ul>
+        </nav>
+        <div>
+            <p>기간 선택:</p>
+            <button onclick="setPeriod('daily')">일간</button>
+            <button onclick="setPeriod('weekly')">주간</button>
+            <button onclick="setPeriod('monthly')">월간</button>
+        </div>
+        <div>
+            <p>카테고리 선택:</p>
+            <button onclick="setCategory('all')">전체</button>
+            <button onclick="setCategory('politics')">정치</button>
+            <button onclick="setCategory('entertainment')">연예</button>
+            <button onclick="setCategory('sports')">스포츠</button>
+        </div>
+        <hr>
+        <div id="wordcloud">
+            
+        </div>
+>>>>>>> 79b97e3c9872e218ed6ef3517375477276c22b76
     </body>
 </html>
