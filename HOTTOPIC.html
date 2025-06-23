@@ -5,8 +5,17 @@
         <title>HOT! TOPIC</title>
         <link rel="stylesheet" href="Hot_style.css">
     </head>
+
     <body>
-        <nav class="navibar">
+
+        <div id="intro-screen">
+            <h1 id="year-progress-text"></h1>
+        </div>
+
+        <div id="word-flow-container"></div>
+
+        <div id="main-content" style="display: none">
+            <nav class="navibar" >
             <div class="navibar_logo">
             <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
 
@@ -32,22 +41,16 @@
             </li>
             </ul>
         </nav>
-
-
         <div class ="main">
             <div class = "drop-target-left">
                 
             </div>
-            
-            <div class ="word_cloud">
-                
-            </div>
+            <div id="word-flow-container"></div>
             
             <div class ="drop-target-right">
                 
             </div>
         </div>
-
-
+        <script src="HOTscript.js"></script>
     </body>
 </html>
