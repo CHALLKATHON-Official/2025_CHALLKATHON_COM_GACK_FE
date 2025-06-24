@@ -44,7 +44,6 @@ const keywords = [
   { word: "음원차트", score: 60, period: "24-4", category: "entertainment" },
   { word: "넷플릭스오리지널", score: 90, period: "24-3", category: "entertainment" },
   { word: "버추얼유튜버", score: 50, period: "25-2", category: "entertainment" }
-
 ];
 
 
@@ -162,11 +161,15 @@ function setCategory(category) {
 //작동
 const final = getYearProgress();
 animateProgressBar(final);
+// 진입 워드 플로우 시작
+startWordFlow();
 
 setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
+  //intro에서 main으로 전환
   document.getElementById("intro-screen").style.display = "none";
   document.getElementById("main-content").style.display = "block";
-  startWordFlow();
+  //메인페이지의 워드 플로우 시작
+  restartWordFlow();
 }, 10000); //화면 전환하려면 숫자 변경
 
 
