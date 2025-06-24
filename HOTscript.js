@@ -168,11 +168,8 @@ setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
   //intro에서 main으로 전환
   document.getElementById("intro-screen").style.display = "none";
   document.getElementById("main-content").style.display = "block";
+  document.getElementById("main").style.display = "block";
   //메인페이지의 워드 플로우 시작
   restartWordFlow();
 }, 10000); //화면 전환하려면 숫자 변경
-
-
-
-
 

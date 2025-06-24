@@ -1,7 +1,7 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
     background-color: lightgray;
@@ -11,6 +11,7 @@ body {
     padding:0;
     font-family: sans-serif;
 }
+/*진입 페이지*/
 #intro-screen {
     background-color: blue;
     color: red;
@@ -47,8 +48,8 @@ body {
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
     background: black;
-    /*z-index: 100;*/
 }
+/*홈페이지*/
 #main-content {
     position: relative;
 }
@@ -58,14 +59,6 @@ body {
     animation: drift 20s linear infinite;
     pointer-events: none;
     line-height: 1.2;
-    /*z-index: 101;
-    color :white;*/
-}
-footer {
-    text-align: center;
-    color: white;
-    background-color: #222;
-    background-color: aqua;
 }
 @keyframes drift {
     0% {
@@ -86,79 +79,77 @@ footer {
 
 /*내비게이션*/
 .navibar {
-background-color: #333;
-height:66px
+    background-color: #333;
+    height:66px
 }
 
 .navibar > ul {
-list-style: none;
-display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .navibar li {
-position: relative;
+    position: relative;
 }
 
 .navibar a {
-display: block;
-padding: 20px 50px; 
-color: white;
-text-decoration: none;
-background-color: #333;
-height: 66px
+    display: block;
+    padding: 20px 50px; 
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    height: 66px
 }
 
 .navibar li:hover > a {
-background-color: #555;
+    background-color: #555;
 }
 
 /* 내비게이션 로고*/
 .navibar_logo {
-float: left;
-width: 120px;
-margin-right: 50px;
-cursor: pointer;
-
+    float: left;
+    width: 120px;
+    margin-right: 50px;
+    cursor: pointer;
 }
 .navibar_logo img {
-width: 100%;
-height: auto;
-
+    width: 100%;
+    height: auto;
 }
 /* 1단 드롭다운 */
 .dropdown-content {
-list-style: none;
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-background-color: #444;
-min-width: 160px;
-z-index: 10;
-margin-right : 50px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 10;
+    margin-right : 50px;
 }
 
 .dropdown-content li {
-position: relative;
+    position: relative;
 }
 
 .dropdown-content a {
-background-color: #444;
-padding: 12px 16px;
+    background-color: #444;
+    padding: 12px 16px;
 }
 
 .dropdown-content a:hover {
-background-color: #666;
+    background-color: #666;
 }
 
 
 /* 드롭다운 작동 트리거 */
 .navibar li:hover > .dropdown-content {
-display: block;
+    display: block;
 }
 
 .dropdown-content li:hover > .submenu {
-display: block;
+    display: block;
 }
 .main{
     display:flex;
@@ -166,29 +157,23 @@ display: block;
 }
 
 
-
-
+/*Drop and Relaese Area*/
 /*drop*/
-.drop-target-left {
-width: 300px;
-height: 150px;
-border: 1px solid #aaa;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #f0f0f0;
-color: #444;
-font-size: 1.2em;
+#main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 50px;
+    margin-top: 40px;
 }
-
-.drop-target-right {
-width: 300px;
-height: 150px;
-border: 1px solid #aaa;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #f0f0f0;
-color: #444;
-font-size: 1.2em;
+.drop-target-left,.drop-target-right {
+    width: 300px;
+    height: 150px;
+    border: 1px solid #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #444;
+    font-size: 1.2em;
 }
