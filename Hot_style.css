@@ -72,7 +72,6 @@ margin-top: 10px;
 .drop-target-right {
   width: 15%;
   height: 100%;
-  background-color: rgba(255,255,255,0.1);
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -81,6 +80,15 @@ margin-top: 10px;
   transform: rotate(180deg);
   font-size: 16px;
   cursor: pointer;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  min-height: 100px;
+  background-color: #f9f9f9;
+}
+
+.drop-target-left:hover,
+.drop-target-right:hover {
+    background-color: #e0f0ff;
 }
 
 #toggle-flow-btn {
@@ -98,7 +106,6 @@ margin-top: 10px;
     position: absolute;
     white-space: nowrap;
     animation: drift 20s linear infinite;
-    pointer-events: none;
     line-height: 1.2;
 }
 
@@ -222,7 +229,6 @@ color: #fff;
 .bottom-container {
 height : 90px;
 display : flex;
-
 }
 .madeby{
 margin-left : 50px;
@@ -232,10 +238,10 @@ color: black;
 
 .bottom-feedback-link {
 text-decoration: none;     
-color: white;             
+color: black;
 transition: color 0.3s; 
 padding : 28px;
-margin-left: 1000px;
+margin-left: 100px;
 font-size : 22px;
 
 }
