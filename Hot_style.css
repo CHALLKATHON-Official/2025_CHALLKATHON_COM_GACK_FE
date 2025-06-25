@@ -17,27 +17,27 @@ body {
 }
 
 #progress-bar-container {
-  width: 80%;
-  height: 20px;
-  background-color: #ddd;
-  border-radius: 10px;
-  margin: 20px auto;
-  overflow: hidden;
+width: 80%;
+height: 20px;
+background-color: #ddd;
+border-radius: 10px;
+margin: 20px auto;
+overflow: hidden;
 }
 
 #progress-bar {
-  height: 100%;
-  width: 0%;
-  background-color: orange;
-  border-radius: 10px;
-  transition: width 0.5s ease;
+height: 100%;
+width: 0%;
+background-color: orange;
+border-radius: 10px;
+transition: width 0.5s ease;
 }
 
 #progress-percent-text {
-  text-align: center;
-  font-size: 18px;
-  color: black;
-  margin-top: 10px;
+text-align: center;
+font-size: 18px;
+color: black;
+margin-top: 10px;
 }
 
 #word-flow-wrapper {
@@ -126,15 +126,15 @@ body {
 /*내비게이션*/
 .navibar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding:0 20px;
     background-color: #333;
     height:66px
 }
 
-.categori {
-font-size: 18px
+.category {
+font-size: 18px;
+
 }
 
 .navibar > ul {
@@ -164,6 +164,7 @@ border: 1 solid #333
     color: white;
     font-size: 14px;
     white-space: nowrap;
+    margin-left : 30px;
 }
 
 /* 내비게이션 로고*/
@@ -218,40 +219,6 @@ color: #fff;
     display: block;
 }
 
-/* 검색버튼*/
-.search-container {
-display: flex;
-align-items: center;
-background-color: white;
-border-radius: 40px;
-padding: 10px 20px;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-width: 400px;
-height: 66px;
-margin-left:530px
-}
-
-.search-input {
-flex: 1;
-border: none;
-outline: none;
-font-size: 16px;
-}
-
-.search-button {
-background-color: #4285f4;
-color: white;
-border: none;
-padding: 8px 20px;
-border-radius: 20px;
-font-size: 14px;
-cursor: pointer;
-}
-
-.search-button:hover {
-background-color: #357ae8;
-}
-
 .bottom-container {
 height : 90px;
 display : flex;
@@ -263,29 +230,20 @@ padding : 30px;
 color: black;
 }
 
-.bottom-insta-link {
-padding : 30px;
+.bottom-feedback-link {
 text-decoration: none;     
-color: white;                
-margin: 0 8px;               
-transition: color 0.3s;     
-}
+color: white;             
+transition: color 0.3s; 
+padding : 28px;
+margin-left: 1000px;
+font-size : 22px;
 
-.bottom-insta-link:hover {
-color: #ffd700;
-}
-
-.bottom-email-link {
-padding: 30px 0 30px 500px;
-text-decoration: none;     
-color: white;                
-margin: 0 8px;               
-transition: color 0.3s;     
 }
 /*feedback*/
 .feedback-container {
     display : flex;
-    height : 100%;
+    flex-direction: column; 
+    min-height : 100vh;
     background-image: linear-gradient(to right top,
     #d16ba5,#c777b9, #ba83ca, 
     #aa8fd8,#9a9ae1, #8aa7ec,
@@ -298,15 +256,65 @@ transition: color 0.3s;
     font-size: 40px;
     font-family: sans-serif;
     margin:200px 0 0 250px;
-}
 
-.email {
-    color :#2FFFAD;
+}
+.email-link > a {
+    color : white;
+    text-decoration: none;
+}
+.email-link > a:hover {
+color: #2FFFAD;
+}
+.introduce-container {
     font-size : 18px;
     margin : 50px 0 0 250px;
 
 }
 
+/*insta*/
+.insta-link {
+padding : 30px;
+text-decoration: none;     
+color: white;
+margin: 0 8px;               
+transition: color 0.3s;     
+}
+.insta-link:hover {
+color: #ffd700;
+}
+
+.insta-container {
+    margin-top:100px;
+}
+.insta-gradient {
+    font-weight: bold;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 .fa-envelope{
-    margin-top:70px
+    margin-top:70px;
+    
+}
+hr {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.44);
+    margin: 40px auto;
+    display: block;
+    width: 100%;
+    margin:20px 0 0 0;
+    background-blend-mode: overlay;
+}
+
+.bottom-feedback-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+.back {
+    color : white;
+    text-decoration: none;
+    margin: 45px;
+    font-size: 20px;
 }
