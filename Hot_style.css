@@ -237,15 +237,31 @@ color: white;
 margin: 0 8px;               
 transition: color 0.3s;     
 }
+/*feedback*/
+.feedback-container {
+    display : flex;
+    height : 100%;
+    background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
+}
 .welcome {
     text-shadow: 2px 3px 0px #898999;
     font-weight: 900;
     font-size: 40px;
     font-family: sans-serif;
-    margin:250px 0 0 250px;
+    margin:200px 0 0 250px;
 }
+
 .email {
     color :#2FFFAD;
-    font-size : 20px;
-    margin : 100px 0 0 250px;
-    
+    font-size : 18px;
+    margin : 50px 0 0 250px;
+
+}
+
+.fa-envelope{
+    margin-top:70px
+}
