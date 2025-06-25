@@ -72,23 +72,24 @@ margin-top: 10px;
 .drop-target-right {
   width: 15%;
   height: 100%;
-  color: #fff;
+  color: white;
   font-weight: bold;
   text-align: center;
-  line-height: 90%;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 16px;
   cursor: pointer;
-  border: 2px dashed #ccc;
   padding: 10px;
-  min-height: 100px;
-  background-color: #f9f9f9;
+  border: 2px dashed #fff;
+  background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+  backdrop-filter: blur(8px); /* 🎯 블러 처리 핵심 */
+  -webkit-backdrop-filter: blur(8px); /* Safari 호환 */
+  transition: background-color 0.3s ease;
 }
 
 .drop-target-left:hover,
 .drop-target-right:hover {
-    background-color: #e0f0ff;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 #toggle-flow-btn {
