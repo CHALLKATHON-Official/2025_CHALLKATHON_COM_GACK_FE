@@ -190,6 +190,33 @@ animateProgressBar(final);
 // 진입 워드 플로우 시작
 startWordFlow();
 
+}
+document.addEventListener('DOMContentLoaded', function () {
+  const leftBox = document.querySelector('.drop-target-left');
+  const rightBox = document.querySelector('.drop-target-right');
+
+  function setupSearchDropEvent(target, searchBaseUrl) {
+    target.addEventListener('dragover', function (e) {
+      e.preventDefault();
+    });
+
+    target.addEventListener('drop', function (e) {
+      e.preventDefault();
+      const keyword = e.dataTransfer.getData("text/plain");
+      if (keyword) {
+        const encoded = encodeURIComponent(keyword);
+        const fullUrl = `${searchBaseUrl}${encoded}`;
+        window.open(fullUrl, '_blank');
+      }
+    });
+  }
+
+  // 왼쪽 → 네이버 검색
+  setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
+
+  // 오른쪽 → 구글 검색
+  setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
+});
 setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
   //intro에서 main으로 전환
   document.getElementById("intro-screen").style.display = "none";
@@ -198,4 +225,3 @@ setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
   //메인페이지의 워드 플로우 시작
   restartWordFlow();
 }, 10000); //화면 전환하려면 숫자 변경
-

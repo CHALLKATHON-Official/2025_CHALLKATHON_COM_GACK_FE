@@ -6,11 +6,12 @@
 body {
     background-color: lightgray;
     color: white;
-    overflow: hidden;
+    overflow-y: auto;
     margin:0;
     padding:0;
     font-family: sans-serif;
 }
+
 /*진입 페이지*/
 #intro-screen {
     background-color: blue;
@@ -43,11 +44,17 @@ body {
 #word-flow-container {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 900px;
     overflow: hidden;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
-    background: black;
+
+    display:flex;
+    justify-content: space-around;  
+    background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
+
 }
 /*홈페이지*/
 #main-content {
@@ -60,6 +67,7 @@ body {
     pointer-events: none;
     line-height: 1.2;
 }
+
 @keyframes drift {
     0% {
         transform: translateX(100vw);
@@ -77,6 +85,24 @@ body {
     }
 }
 
+/*drop*/
+.drop-target-left {
+width: 500px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #444;
+font-size: 1.2em;
+}
+
+.drop-target-right {
+width: 500px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #444;
+font-size: 1.2em;
+}
 /*내비게이션*/
 .navibar {
     display: flex;
@@ -85,6 +111,10 @@ body {
     padding:0 20px;
     background-color: #333;
     height:66px
+}
+
+.categori {
+font-size: 18px
 }
 
 .navibar > ul {
@@ -97,12 +127,13 @@ body {
 }
 
 .navibar a {
-    display: block;
-    padding: 20px 50px; 
-    color: white;
-    text-decoration: none;
-    background-color: #333;
-    height: 66px
+display: block;
+padding: 20px 50px; 
+color: white;
+text-decoration: none;
+background-color: #333;
+height: 66px;
+border: 1 solid #333
 }
 
 .navibar li:hover > a {
@@ -117,30 +148,38 @@ body {
 
 /* 내비게이션 로고*/
 .navibar_logo {
-    float: left;
-    width: 120px;
-    margin-right: 50px;
-    cursor: pointer;
+float: left;
+width: 120px;
+
+cursor: pointer;
 }
+
 .navibar_logo img {
     width: 100%;
     height: auto;
 }
-/* 1단 드롭다운 */
+/*드롭다운 */
 .dropdown-content {
-    list-style: none;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    min-width: 160px;
-    z-index: 10;
-    margin-right : 50px;
+padding:0;
+list-style: none;
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #444;
+z-index: 10;
+margin-right : 50px;
+align-items: center;
+line-height: 1.5;
 }
 
 .dropdown-content li {
-    position: relative;
+position: relative;
+width: 180px;
+border-bottom: 1px solid #666;
+}
+.dropdown-content li:last-child {
+border-bottom: none;  
 }
 
 .dropdown-content a {
@@ -149,7 +188,8 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #666;
+background-color: #5a5a5a;
+color: #fff;
 }
 
 
@@ -158,32 +198,93 @@ body {
     display: block;
 }
 
-.dropdown-content li:hover > .submenu {
-    display: block;
-}
-.main{
-    display:flex;
-    justify-content: space-around;
+/* 검색버튼*/
+.search-container {
+display: flex;
+align-items: center;
+background-color: white;
+border-radius: 40px;
+padding: 10px 20px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+width: 400px;
+margin-left:530px
 }
 
 
-/*Drop and Relaese Area*/
-/*drop*/
-#main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0 50px;
-    margin-top: 40px;
+.search-input {
+flex: 1;
+border: none;
+outline: none;
+font-size: 16px;
 }
-.drop-target-left,.drop-target-right {
-    width: 300px;
-    height: 150px;
-    border: 1px solid #aaa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    color: #444;
-    font-size: 1.2em;
+
+.search-button {
+background-color: #4285f4;
+color: white;
+border: none;
+padding: 8px 20px;
+border-radius: 20px;
+font-size: 14px;
+cursor: pointer;
+}
+
+.search-button:hover {
+background-color: #357ae8;
+}
+
+.bottom-container {
+height : 90px;
+display : flex;
+
+}
+.madeby{
+margin-left : 50px;
+padding : 30px
+
+}
+.bottom-insta-link {
+padding : 30px;
+text-decoration: none;     
+color: white;                
+margin: 0 8px;               
+transition: color 0.3s;     
+}
+.bottom-insta-link:hover {
+color: #ffd700;
+}
+
+.bottom-email-link {
+padding: 30px 0 30px 500px;
+text-decoration: none;     
+color: white;                
+margin: 0 8px;               
+transition: color 0.3s;     
+}
+/*feedback*/
+.feedback-container {
+    display : flex;
+    height : 100%;
+    background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
+}
+.welcome {
+    text-shadow: 2px 3px 0px #898999;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: sans-serif;
+    margin:200px 0 0 250px;
+}
+
+.email {
+    color :#2FFFAD;
+    font-size : 18px;
+    margin : 50px 0 0 250px;
+
+}
+
+.fa-envelope{
+    margin-top:70px
 }
