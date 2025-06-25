@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 body {
     color: white;
@@ -9,6 +10,14 @@ body {
     margin:0;
     padding:0;
     font-family: sans-serif;
+    display : flex;
+    flex-direction: column; 
+    min-height : 100vh;
+    background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
 }
 /*진입 페이지*/
 #intro-screen {
@@ -40,47 +49,29 @@ color: black;
 margin-top: 10px;
 }
 
-#word-flow-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 500px;
-  background-image: linear-gradient(to right top,
-    #d16ba5,#c777b9, #ba83ca, 
-    #aa8fd8,#9a9ae1, #8aa7ec,
-    #79b3f4, #69bff8, #52cffe, 
-    #41dfff, #46eefa, #5ffbf1);
-}
 
 #word-flow-container {
     position: relative;
-    width: 70%;
+    width: 100%;
     height: 500px;
     overflow: hidden;
     margin: 0 auto;
     display:flex;
     justify-content: space-around;  
-    background-image: linear-gradient(to right top,
-    #d16ba5,#c777b9, #ba83ca, 
-    #aa8fd8,#9a9ae1, #8aa7ec,
-    #79b3f4, #69bff8, #52cffe, 
-    #41dfff, #46eefa, #5ffbf1);
 }
 
 .drop-target-left,
 .drop-target-right {
-  width: 15%;
-  height: 100%;
-  background-color: rgba(255,255,255,0.1);
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  line-height: 90%;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 16px;
-  cursor: pointer;
+    width: 15%;
+    height: 100%;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 90%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 16px;
+    cursor: pointer;
 }
 
 #toggle-flow-btn {
@@ -222,6 +213,7 @@ color: #fff;
 .bottom-container {
 height : 90px;
 display : flex;
+background-color: ;
 
 }
 .madeby{
@@ -232,7 +224,7 @@ color: black;
 
 .bottom-feedback-link {
 text-decoration: none;     
-color: white;             
+color: black;             
 transition: color 0.3s; 
 padding : 28px;
 margin-left: 1000px;
