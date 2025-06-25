@@ -8,60 +8,74 @@
 
     <body>
         <div id="intro-screen">
-            <h1 id="year-progress-text"></h1>
+            <h2 id="year-text">2025년 경과율</h2>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-percent-text"></p>
         </div>
 
-        <div id="word-flow-container"></div>
-
         <div id="main-content" style="display: none">
-            <nav class="navibar">
-            <div class="navibar_logo">
-            <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
 
-            </div>  
-            <ul>
-            <li>
-                <a href="#" class = "categori">기간</a>
-                <ul class="dropdown-content">
-                <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
-                <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
-                <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
-                <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
+            <nav class="navibar" >
+                <div class="navibar_logo">
+                    <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
+                </div> 
+                <ul>
+                    <li>
+                        <a href="#" class = "category">기간</a>
+                            <ul class="dropdown-content">
+                                <li><a href="#" onclick="setPeriod('all')">최근 1년</a></li>
+                                <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
+                                <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
+                                <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
+                                <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a href="#"class = "category">분야</a> 
+                            <ul class="dropdown-content">
+                                <li><a href="#" onclick="setCategory('all')">전체</a></li>
+                                <li><a href="#" onclick="setCategory('technology')">기술</a></li>
+                                <li><a href="#" onclick="setCategory('science')">과학</a></li>
+                                <li><a href="#" onclick="setCategory('social')">사회</a></li>
+                                <li><a href="#" onclick="setCategory('health')">건강</a></li>
+                                <li><a href="#" onclick="setCategory('environment')">환경</a></li>
+                                <li><a href="#" onclick="setCategory('politics')">정치</a></li>
+                                <li><a href="#" onclick="setCategory('economy')">경제</a></li>
+                                <li><a href="#" onclick="setCategory('entertainment')">연예</a></li>
+                                <li><a href="#" onclick="setCategory('sports')">스포츠</a></li>
+                            </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#"class = "categori">분야</a> 
-                <ul class="dropdown-content">
-                <li><a href="#" onclick="setPeriod('all')">전체</a></li>
-                <li><a href="#" onclick="setPeriod('entertainment')">연예</a></li>
-                <li><a href="#" onclick="setPeriod('politics')">정치</a></li>
-                <li><a href="#" onclick="setPeriod('sports')">스포츠</a></li>
-                </ul>
-            </li>
-            </ul>
-                        
-            <div class="search-container">
+                <div class="filter-status">
+                    <span id="filter-period">📅전체</span>
+                    <span id="filter-category">🏷️전체</span>
+                </div>
+            
+                <div class="search-container">
                 <div class="search-icon"></div>
                 <input type="text" class="search-input" placeholder="   whatever" />
                 <button class="search-button">검색</button>
-            </div>
-        </nav>
+                </div>
+            </nav>
+        </div>
         <div class ="main">
-            <div class = "drop-target-left"></div>  
-            <div class ="word-colud"><a href = "#">드랍예시</a></div>
-            
-            <div class ="drop-target-right"></div>
+                <div class = "drop-target-left"></div>  
+                <div class ="word-colud"><a href = "#">드랍예시</a></div>
+                <div class ="drop-target-right"></div>
         </div>
-        <div class = "bottom-container">
-            <div class = "madeby">
-                made by COM-GACK
+            <div class = "bottom-container">
+                <div class = "madeby">
+                    made by COM-GACK
+                </div>
+                <a class="bottom-insta-link" href="https://www.instagram.com/seungmii1n/" target="_blank">김승민</a>
+                <a class="bottom-insta-link" href="https://www.instagram.com/i_tam03/" target="_blank">김태민</a>
+                <a class="bottom-insta-link" href="https://www.instagram.com/doo_roh/" target="_blank">노현두</a>
+                <a class="bottom-insta-link" href="https://www.instagram.com/song_16hwan/" target="_blank">송경환</a>
+                <a class="bottom-email-link" href="http://127.0.0.1:5500/HOT_email.html" target="_blank">email</a>
             </div>
-            <a class="bottom-insta-link" href="https://www.instagram.com/seungmii1n/" target="_blank">김승민</a>
-            <a class="bottom-insta-link" href="https://www.instagram.com/i_tam03/" target="_blank">김태민</a>
-            <a class="bottom-insta-link" href="https://www.instagram.com/doo_roh/" target="_blank">노현두</a>
-            <a class="bottom-insta-link" href="https://www.instagram.com/song_16hwan/" target="_blank">송경환</a>
-            <a class="bottom-email-link" href="http://127.0.0.1:5500/HOT_email.html" target="_blank">email</a>
-        </div>
+        <div id="word-flow-container"></div>
         <script src="HOTscript.js"></script>
     </body>
 </html>
