@@ -151,11 +151,37 @@ function getFilteredKeywords() {
 //선택 태그 반영 함수
 function setPeriod(period) {
   selectedPeriod = period;
+  updateFilterStatus();
   restartWordFlow();
 }
 function setCategory(category) {
   selectedCategory = category;
+  updateFilterStatus();
   restartWordFlow();
+}
+
+function updateFilterStatus() {
+  const periodMap = {
+    "all": "전체",
+    "24-3": "24년도 3분기",
+    "24-4": "24년도 4분기",
+    "25-1": "25년도 1분기",
+    "25-2": "25년도 2분기"
+  };
+  const categoryMap = {
+    "all": "전체",
+    "technology": "기술",
+    "science": "과학",
+    "social": "사회",
+    "health": "건강",
+    "environment": "환경",
+    "politics": "정치",
+    "economy": "경제",
+    "entertainment": "연예",
+    "sports": "스포츠"
+  };
+  document.getElementById("filter-period").textContent = "📅 " + (periodMap[selectedPeriod] || "전체");
+  document.getElementById("filter-category").textContent = "🏷️ " + (categoryMap[selectedCategory] || "전체");
 }
 
 //작동
