@@ -62,16 +62,26 @@ margin-top: 10px;
 
 .drop-target-left,
 .drop-target-right {
-    width: 15%;
-    height: 100%;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height: 90%;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 16px;
-    cursor: pointer;
+width: 15%;
+height: 100%;
+color: white;
+font-weight: bold;
+text-align: center;
+writing-mode: vertical-rl;
+transform: rotate(180deg);
+font-size: 16px;
+cursor: pointer;
+padding: 10px;
+border: 2px dashed #fff;
+background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+backdrop-filter: blur(8px); /* 🎯 블러 처리 핵심 */
+-webkit-backdrop-filter: blur(8px); /* Safari 호환 */
+transition: background-color 0.3s ease;
+}
+
+.drop-target-left:hover,
+.drop-target-right:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 #toggle-flow-btn {
@@ -89,7 +99,6 @@ margin-top: 10px;
     position: absolute;
     white-space: nowrap;
     animation: drift 20s linear infinite;
-    pointer-events: none;
     line-height: 1.2;
 }
 
@@ -213,8 +222,6 @@ color: #fff;
 .bottom-container {
 height : 90px;
 display : flex;
-background-color: ;
-
 }
 .madeby{
 margin-left : 50px;
@@ -224,10 +231,10 @@ color: black;
 
 .bottom-feedback-link {
 text-decoration: none;     
-color: black;             
+color: black;
 transition: color 0.3s; 
 padding : 28px;
-margin-left: 1000px;
+margin-left: 100px;
 font-size : 22px;
 
 }

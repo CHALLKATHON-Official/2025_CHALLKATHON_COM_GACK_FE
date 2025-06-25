@@ -106,9 +106,7 @@ function startWordFlow() {
 function restartWordFlow() {
   clearInterval(currentFlowInterval);
   document.querySelectorAll(".word").forEach(el =>el.remove());
-  if (!isPaused) {
-    startWordFlow();
-  }
+  startWordFlow();
 }
 
 //word-flow-container 설정
@@ -138,13 +136,17 @@ function spawnWord(item, lineHeight) {
   span.style.animation = `drift ${duration / 1000}s linear forwards`;
   span.style.animationPlayState = isPaused ? "paused" : "running";
 
-  const startTime = Date.now();
   const removeId = setTimeout(() => {
     if (span.parentElement) container.removeChild(span);
   },duration);
   span.dataset.removeId = removeId;
-  span.dataset.startTime = startTime;
+  span.dataset.startTime = Date.now();
   span.dataset.duration = duration;
+
+  span.setAttribute("draggable","true");
+  span.addEventListener("dragstart",e => {
+    e.dataTransfer.setData("text/plain", item.word);
+  });
 
   container.appendChild(span); //단어 화면에 추가하기
 }
@@ -233,10 +235,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function setupSearchDropEvent(target, searchBaseUrl) {
     target.addEventListener('dragover', e => e.preventDefault());
+
     target.addEventListener('drop', e => {
       e.preventDefault();
-      const keyword =e.dataTransfer.getData("text/plain");
-      if (keyword) window.open(`${searchBaseUrl}${encodeURIComponent(keyword)}`, '_blank');
+      const keyword = e.dataTransfer.getData("text/plain");
+      if (keyword) {
+        const encoded = encodeURIComponent(keyword);
+        const fullUrl = `${searchBaseUrl}${encoded}`;
+        window.open(fullUrl, '_blank');
+      }
     });
   }
   // 왼쪽 → 네이버 검색
@@ -245,18 +252,21 @@ document.addEventListener('DOMContentLoaded', function () {
   setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
 })
 
-// 초기실행
-const final = getYearProgress();
-animateProgressBar(final);
+document.addEventListener("DOMContentLoaded", () => {
+  const final = getYearProgress();
+  animateProgressBar(final);
 
-setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
-  //intro에서 main으로 전환
-  document.getElementById("intro-screen").style.display = "none";
-  document.getElementById("main-content").style.display = "block";
-  document.getElementById("main").style.display = "block";
-  document.getElementsByClassName("bottom-container")[0].style.display = "block";
-  //메인페이지의 워드 플로우 시작
+  // 📦 초기 화면 전환 + 단어 흐름 시작
   setTimeout(() => {
-    startWordFlow();
-  },100);
-}, 10000); //화면 전환하려면 숫자 변경
+    // intro → main 전환
+    document.getElementById("intro-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    document.getElementById("main").style.display = "block";
+    document.getElementsByClassName("bottom-container")[0].style.display = "block";
+
+    // ⏳ 약간의 딜레이 후 워드 플로우 시작
+    setTimeout(() => {
+      startWordFlow(); // ⭐ 진입과 동시에 단어 흐르게 함
+    }, 100); // DOM 렌더링 시간 확보
+  }, 10000);
+});
