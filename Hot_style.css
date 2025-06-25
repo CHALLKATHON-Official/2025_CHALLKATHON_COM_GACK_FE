@@ -4,19 +4,18 @@
     box-sizing: border-box;
 }
 body {
-    background-color: lightgray;
     color: white;
     overflow-y: auto;
     margin:0;
     padding:0;
     font-family: sans-serif;
 }
-
 /*진입 페이지*/
 #intro-screen {
     background-color: blue;
     color: red;
 }
+
 #progress-bar-container {
   width: 80%;
   height: 20px;
@@ -41,12 +40,25 @@ body {
   margin-top: 10px;
 }
 
+#word-flow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
+}
+
 #word-flow-container {
     position: relative;
-    width: 100%;
-    height: 900px;
+    width: 70%;
+    height: 500px;
     overflow: hidden;
-
+    margin: 0 auto;
     display:flex;
     justify-content: space-around;  
     background-image: linear-gradient(to right top,
@@ -54,8 +66,30 @@ body {
     #aa8fd8,#9a9ae1, #8aa7ec,
     #79b3f4, #69bff8, #52cffe, 
     #41dfff, #46eefa, #5ffbf1);
-
 }
+
+.drop-target-left,
+.drop-target-right {
+  width: 15%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 90%;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#toggle-flow-btn {
+    margin-left: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor:pointer;
+}
+
 /*홈페이지*/
 #main-content {
     position: relative;
@@ -66,6 +100,10 @@ body {
     animation: drift 20s linear infinite;
     pointer-events: none;
     line-height: 1.2;
+}
+
+.word.paused {
+    animation-play-state: paused !important;
 }
 
 @keyframes drift {
@@ -85,24 +123,6 @@ body {
     }
 }
 
-/*drop*/
-.drop-target-left {
-width: 500px;
-display: flex;
-align-items: center;
-justify-content: center;
-color: #444;
-font-size: 1.2em;
-}
-
-.drop-target-right {
-width: 500px;
-display: flex;
-align-items: center;
-justify-content: center;
-color: #444;
-font-size: 1.2em;
-}
 /*내비게이션*/
 .navibar {
     display: flex;
@@ -207,9 +227,9 @@ border-radius: 40px;
 padding: 10px 20px;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 width: 400px;
+height: 66px;
 margin-left:530px
 }
-
 
 .search-input {
 flex: 1;
@@ -239,9 +259,10 @@ display : flex;
 }
 .madeby{
 margin-left : 50px;
-padding : 30px
-
+padding : 30px;
+color: black;
 }
+
 .bottom-insta-link {
 padding : 30px;
 text-decoration: none;     
@@ -249,6 +270,7 @@ color: white;
 margin: 0 8px;               
 transition: color 0.3s;     
 }
+
 .bottom-insta-link:hover {
 color: #ffd700;
 }

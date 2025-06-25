@@ -54,6 +54,10 @@ const container = document.getElementById("word-flow-container");
 const lines = 15;
 let usedLines = new Set();
 let currentFlowInterval = null;
+let isPaused = false;
+
+//단어가 정지된 시점 기록
+const wordTimestamps = new Map();
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
@@ -67,6 +71,7 @@ function getYearProgress() {
   const percent = ((now -start) /(end - start)) * 100;
   return percent.toFixed(1);
 }
+
 function animateProgressBar(finalPercent) {
   const bar = document.getElementById("progress-bar");
   const text = document.getElementById("progress-percent-text");
@@ -101,7 +106,9 @@ function startWordFlow() {
 function restartWordFlow() {
   clearInterval(currentFlowInterval);
   document.querySelectorAll(".word").forEach(el =>el.remove());
-  startWordFlow();
+  if (!isPaused) {
+    startWordFlow();
+  }
 }
 
 //word-flow-container 설정
@@ -114,7 +121,7 @@ function getAvailableY(fontSize, lineHeight) {
   usedLines.add(line); //이미 사용된 라인이라면 다시 뽑기
   return line * lineHeight + (lineHeight - fontSize)/2; //선택된 라인에 맞춰서 y축 좌표 계산, +10으로 word가 상단에 붙지 않도록 함
 }
-function spawnWord(item, lineHeight,isLast = false) {
+function spawnWord(item, lineHeight) {
   const span = document.createElement("span"); //새로운 span 요소를 만들고 텍스트로 단어를 설정한 다음 word클래스 붙이기
   span.classList.add("word");
   span.textContent = item.word;
@@ -122,22 +129,24 @@ function spawnWord(item, lineHeight,isLast = false) {
   // 크기 설정 (점수 기반)
   const fontSize = Math.min(item.score / 2 + 10,lineHeight-4); //word의 score에 맞춰 글씨 크기 설정 (lineheight보다는 작게)
   const y = getAvailableY(fontSize,lineHeight);
+  const duration = 20000; // 숫자가 높을수록 느리다
 
   // 위치 설정 (위쪽 랜덤 y 위치)
   span.style.top = y + "px";
   span.style.fontSize = fontSize + "px";
   // 속도 고정
-  const duration = 20; // 숫자가 높을수록 느리다
-  span.style.animation = `drift ${duration}s linear forwards`;
+  span.style.animation = `drift ${duration / 1000}s linear forwards`;
+  span.style.animationPlayState = isPaused ? "paused" : "running";
+
+  const startTime = Date.now();
+  const removeId = setTimeout(() => {
+    if (span.parentElement) container.removeChild(span);
+  },duration);
+  span.dataset.removeId = removeId;
+  span.dataset.startTime = startTime;
+  span.dataset.duration = duration;
 
   container.appendChild(span); //단어 화면에 추가하기
-
-  // 흐름 끝나면 제거
-  setTimeout(() => {
-    container.removeChild(span);
-  }, duration * 1000);
-
-  return duration; //지속시간 반환
 }
 
 //필터링 함수 작성
@@ -146,7 +155,7 @@ function getFilteredKeywords() {
     const matchPeriod = selectedPeriod === "all" || item.period === selectedPeriod;
     const matchCategory = selectedCategory === "all" || item.category === selectedCategory;
     return matchPeriod && matchCategory;
-  })
+  });
 }
 //선택 태그 반영 함수
 function setPeriod(period) {
@@ -184,44 +193,70 @@ function updateFilterStatus() {
   document.getElementById("filter-category").textContent = "🏷️ " + (categoryMap[selectedCategory] || "전체");
 }
 
-//작동
-const final = getYearProgress();
-animateProgressBar(final);
-// 진입 워드 플로우 시작
-startWordFlow();
+//정지, 재생 버튼
+document.getElementById("toggle-flow-btn").addEventListener("click", () => {
+  const button = document.getElementById("toggle-flow-btn");
+  const words = document.querySelectorAll(".word");
 
+  if (!isPaused) {
+    words.forEach(word => {
+      word.style.animationPlayState = "paused";
+      clearTimeout(word.dataset.removeId);
+      const elapsed = Date.now() - word.dataset.startTime;
+      word.dataset.remaining = word.dataset.duration - elapsed;
+    });
+    clearInterval(currentFlowInterval);
+    currentFlowInterval = null;
+    button.textContent = "재생"
+    isPaused = true;
+  } else {
+    words.forEach(word => {
+      word.style.animationPlayState = "running";
+      const remaining = word.dataset.remaining || word.dataset.duration;
+      const newId = setTimeout(() => {
+        if (word.parentElement) container.removeChild(word);
+      }, remaining);
+      word.dataset.removeId = newId;
+      word.dataset.startTime = Date.now();
+      word.dataset.duration = remaining;
+    });
+    startWordFlow();
+    button.textContent = "정지";
+    isPaused = false;
+  }
+});
+
+// 드롭 타켓 이벤트
 document.addEventListener('DOMContentLoaded', function () {
   const leftBox = document.querySelector('.drop-target-left');
   const rightBox = document.querySelector('.drop-target-right');
 
   function setupSearchDropEvent(target, searchBaseUrl) {
-    target.addEventListener('dragover', function (e) {
+    target.addEventListener('dragover', e => e.preventDefault());
+    target.addEventListener('drop', e => {
       e.preventDefault();
-    });
-
-    target.addEventListener('drop', function (e) {
-      e.preventDefault();
-      const keyword = e.dataTransfer.getData("text/plain");
-      if (keyword) {
-        const encoded = encodeURIComponent(keyword);
-        const fullUrl = `${searchBaseUrl}${encoded}`;
-        window.open(fullUrl, '_blank');
-      }
+      const keyword =e.dataTransfer.getData("text/plain");
+      if (keyword) window.open(`${searchBaseUrl}${encodeURIComponent(keyword)}`, '_blank');
     });
   }
-
   // 왼쪽 → 네이버 검색
   setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
-
   // 오른쪽 → 구글 검색
   setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
-});
+})
+
+// 초기실행
+const final = getYearProgress();
+animateProgressBar(final);
+
 setTimeout(() => { // 올해의 경과율이 멈추면 그때 단어생성
   //intro에서 main으로 전환
   document.getElementById("intro-screen").style.display = "none";
   document.getElementById("main-content").style.display = "block";
   document.getElementById("main").style.display = "block";
-  document.getElementById("bottom-container").style.display = "block";
+  document.getElementsByClassName("bottom-container")[0].style.display = "block";
   //메인페이지의 워드 플로우 시작
-  restartWordFlow();
+  setTimeout(() => {
+    startWordFlow();
+  },100);
 }, 10000); //화면 전환하려면 숫자 변경
