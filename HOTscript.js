@@ -261,9 +261,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // intro → main 전환
     document.getElementById("intro-screen").style.display = "none";
     document.getElementById("main-content").style.display = "block";
-    document.getElementById("main").style.display = "block";
     document.getElementsByClassName("bottom-container")[0].style.display = "block";
 
+    isPaused = false;
+    document.getElementById("toggle-flow-btn").textContent = 
     // ⏳ 약간의 딜레이 후 워드 플로우 시작
     setTimeout(() => {
       startWordFlow(); // ⭐ 진입과 동시에 단어 흐르게 함
