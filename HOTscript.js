@@ -228,7 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("intro-screen").style.display = "none";
     document.getElementById("main-content").style.display = "block";
     document.getElementsByClassName("bottom-container")[0].style.display = "block";
-
     isPaused = false;
     document.getElementById("toggle-flow-btn").textContent = "정지"
     setTimeout(() => { //DOM 렌더링 후 단어 애니메이션 시작
