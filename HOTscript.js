@@ -227,6 +227,31 @@ document.getElementById("toggle-flow-btn").addEventListener("click", () => {
     isPaused = false;
   }
 });
+
+// 드롭 타켓 이벤트
+document.addEventListener('DOMContentLoaded', function () {
+  const leftBox = document.querySelector('.drop-target-left');
+  const rightBox = document.querySelector('.drop-target-right');
+
+  function setupSearchDropEvent(target, searchBaseUrl) {
+    target.addEventListener('dragover', e => e.preventDefault());
+
+    target.addEventListener('drop', e => {
+      e.preventDefault();
+      const keyword = e.dataTransfer.getData("text/plain");
+      if (keyword) {
+        const encoded = encodeURIComponent(keyword);
+        const fullUrl = `${searchBaseUrl}${encoded}`;
+        window.open(fullUrl, '_blank');
+      }
+    });
+  }
+  // 왼쪽 → 네이버 검색
+  setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
+  // 오른쪽 → 구글 검색
+  setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
+})
+
 document.addEventListener("DOMContentLoaded", () => {
   // 요소 참조
   const intro = document.getElementById("intro-screen");
@@ -243,21 +268,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const final = getYearProgress();
   animateProgressBar(final);
 
-  // 4초 후 intro 페이드아웃 + 1초 후 본 콘텐츠 표시
+
   setTimeout(() => {
-    intro.classList.add("fade-out");
+    // intro → main 전환
+    document.getElementById("intro-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+    document.getElementsByClassName("bottom-container")[0].style.display = "block";
 
-    setTimeout(() => {
-      intro.style.display = "none";
-      main.style.display = "block";
-      bottom.style.display = "flex";
-
+    isPaused = false;
+    document.getElementById("toggle-flow-btn").textContent = "정지"
       // 단어 흐름 시작
+    setTimeout(() => {
       startWordFlow();
-    }, 500);
-  }, 4000);
-
-  // 드래그 검색 이벤트 등록
-  setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
-  setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
-});
+    },100);
+    }, 10000);
+  });

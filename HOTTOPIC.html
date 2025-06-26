@@ -11,40 +11,44 @@
         <div id="main-content">
             <nav class="navibar" >
                 <div class="navibar_logo">
-                    <img src="navibar_logo.png" alt="Logo" onclick="location.reload();">
-                </div> 
-                <ul>
-                    <li>
-                        <a href="#" class = "category">기간</a>
-                            <ul class="dropdown-content">
-                                <li><a href="#" onclick="setPeriod('all')">최근 1년</a></li>
-                                <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
-                                <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
-                                <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
-                                <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
-                            </ul>
-                    </li>
-                    <li>
-                        <a href="#"class = "category">분야</a> 
-                            <ul class="dropdown-content">
-                                <li><a href="#" onclick="setCategory('all')">전체</a></li>
-                                <li><a href="#" onclick="setCategory('technology')">기술</a></li>
-                                <li><a href="#" onclick="setCategory('science')">과학</a></li>
-                                <li><a href="#" onclick="setCategory('social')">사회</a></li>
-                                <li><a href="#" onclick="setCategory('health')">건강</a></li>
-                                <li><a href="#" onclick="setCategory('environment')">환경</a></li>
-                                <li><a href="#" onclick="setCategory('politics')">정치</a></li>
-                                <li><a href="#" onclick="setCategory('economy')">경제</a></li>
-                                <li><a href="#" onclick="setCategory('entertainment')">연예</a></li>
-                                <li><a href="#" onclick="setCategory('sports')">스포츠</a></li>
-                            </ul>
-                    </li>
-                </ul>
-                <div class="filter-status">
-                    <span id="filter-period">📅전체</span>
-                    <span id="filter-category">🏷️전체</span>
+                    <img src="navibar_logo_new.PNG" alt="Logo" onclick="location.reload();">
                 </div>
-                <button id="toggle-flow-btn">재생</button>
+                <div class="navibar-right">
+                    <div class="menu-items">
+                        <ul>
+                            <li>
+                                <a href="#" class = "category">기간</a>
+                                <ul class="dropdown-content">
+                                    <li><a href="#" onclick="setPeriod('all')">최근 1년</a></li>
+                                    <li><a href="#" onclick="setPeriod('24-3')">24년도 3분기</a></li>
+                                    <li><a href="#" onclick="setPeriod('24-4')">24년도 4분기</a></li>
+                                    <li><a href="#" onclick="setPeriod('25-1')">25년도 1분기</a></li>
+                                    <li><a href="#" onclick="setPeriod('25-2')">25년도 2분기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"class = "category">분야</a>
+                                <ul class="dropdown-content">
+                                    <li><a href="#" onclick="setCategory('all')">전체</a></li>
+                                    <li><a href="#" onclick="setCategory('technology')">기술</a></li>
+                                    <li><a href="#" onclick="setCategory('science')">과학</a></li>
+                                    <li><a href="#" onclick="setCategory('social')">사회</a></li>
+                                    <li><a href="#" onclick="setCategory('health')">건강</a></li>
+                                    <li><a href="#" onclick="setCategory('environment')">환경</a></li>
+                                    <li><a href="#" onclick="setCategory('politics')">정치</a></li>
+                                    <li><a href="#" onclick="setCategory('economy')">경제</a></li>
+                                    <li><a href="#" onclick="setCategory('entertainment')">연예</a></li>
+                                    <li><a href="#" onclick="setCategory('sports')">스포츠</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="filter-status">
+                        <span id="filter-period">📅전체</span>
+                        <span id="filter-category">🏷️전체</span>
+                    </div>
+                    <button id="toggle-flow-btn">재생</button>
+                </div>
             </nav>
         </div>
         
