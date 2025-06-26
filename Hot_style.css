@@ -21,8 +21,7 @@ body {
 }
 /*진입 페이지*/
 #intro-screen {
-    position: fixed;        /* 화면 고정 */
-    top: 0;
+    position: fixed;        
     left: 0;
     width: 100vw;
     height: 100vh;

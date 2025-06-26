@@ -228,22 +228,22 @@ document.getElementById("toggle-flow-btn").addEventListener("click", () => {
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // 💡 요소 참조
+  // 요소 참조
   const intro = document.getElementById("intro-screen");
   const main = document.getElementById("main-content");
   const bottom = document.querySelector(".bottom-container");
   const leftBox = document.querySelector(".drop-target-left");
   const rightBox = document.querySelector(".drop-target-right");
 
-  // ⛔ 초기 상태 숨기기
+  // 초기 상태 숨기기
   main.style.display = "block";
   bottom.style.display = "flex";
 
-  // 📊 연도 진행률 표시
+  // 연도 진행률 표시
   const final = getYearProgress();
   animateProgressBar(final);
 
-  // 🕓 4초 후 intro 페이드아웃 + 1초 후 본 콘텐츠 표시
+  // 4초 후 intro 페이드아웃 + 1초 후 본 콘텐츠 표시
   setTimeout(() => {
     intro.classList.add("fade-out");
 
@@ -252,12 +252,12 @@ document.addEventListener("DOMContentLoaded", () => {
       main.style.display = "block";
       bottom.style.display = "flex";
 
-      // 🌊 단어 흐름 시작
+      // 단어 흐름 시작
       startWordFlow();
     }, 500);
   }, 4000);
 
-  // 🔍 드래그 검색 이벤트 등록
+  // 드래그 검색 이벤트 등록
   setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
   setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
 });
