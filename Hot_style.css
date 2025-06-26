@@ -17,8 +17,26 @@ body {
 }
 /*진입 페이지*/
 #intro-screen {
-    background-color: blue;
+    position: fixed;        /* 화면 고정 */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     color: red;
+    z-index: 99;          
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#intro-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
 }
 
 #progress-bar-container {
@@ -53,7 +71,9 @@ margin-top: 10px;
     overflow: hidden;
     margin: 0 auto;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-around;  
+    flex-grow: 1;
+    min-height: 0; 
 }
 
 .drop-target-left,
@@ -258,35 +278,20 @@ background-color: #5a5a5a;
 }
 
 .bottom-container {
-height : 90px;
+height : 120px;
 display : flex;
+justify-content: space-between;
 }
-.madeby{
-margin-left : 50px;
-padding : 30px;
-color: black;
-}
-
-.bottom-feedback-link {
-text-decoration: none;     
-color: black;
+.madeby,.bottom-feedback-link{
+margin: 15px;
+color: white;
+text-decoration: none;   
 transition: color 0.3s; 
-padding : 28px;
-margin-left: 100px;
+padding : 24px 45px;
 font-size : 22px;
+}
 
-}
 /*feedback*/
-.feedback-container {
-    display : flex;
-    flex-direction: column; 
-    min-height : 100vh;
-    background-image: linear-gradient(to right top,
-    #d16ba5,#c777b9, #ba83ca, 
-    #aa8fd8,#9a9ae1, #8aa7ec,
-    #79b3f4, #69bff8, #52cffe, 
-    #41dfff, #46eefa, #5ffbf1);
-}
 .welcome {
     text-shadow: 2px 3px 0px #898999;
     font-weight: 900;
@@ -322,6 +327,7 @@ color: #ffd700;
 
 .insta-container {
     margin-top:100px;
+    margin-bottom: 25px;
 }
 .insta-gradient {
     font-weight: bold;
@@ -344,7 +350,7 @@ hr {
 
 .bottom-feedback-container {
     display: flex;
-    justify-content: space-between;
+    
 
 }
 .back {

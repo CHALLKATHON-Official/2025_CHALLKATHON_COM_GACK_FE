@@ -253,6 +253,18 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 💡 요소 참조
+  const intro = document.getElementById("intro-screen");
+  const main = document.getElementById("main-content");
+  const bottom = document.querySelector(".bottom-container");
+  const leftBox = document.querySelector(".drop-target-left");
+  const rightBox = document.querySelector(".drop-target-right");
+
+  // ⛔ 초기 상태 숨기기
+  main.style.display = "block";
+  bottom.style.display = "flex";
+
+  // 📊 연도 진행률 표시
   const final = getYearProgress();
   animateProgressBar(final);
 
