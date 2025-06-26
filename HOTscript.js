@@ -227,46 +227,37 @@ document.getElementById("toggle-flow-btn").addEventListener("click", () => {
     isPaused = false;
   }
 });
-
-// 드롭 타켓 이벤트
-document.addEventListener('DOMContentLoaded', function () {
-  const leftBox = document.querySelector('.drop-target-left');
-  const rightBox = document.querySelector('.drop-target-right');
-
-  function setupSearchDropEvent(target, searchBaseUrl) {
-    target.addEventListener('dragover', e => e.preventDefault());
-
-    target.addEventListener('drop', e => {
-      e.preventDefault();
-      const keyword = e.dataTransfer.getData("text/plain");
-      if (keyword) {
-        const encoded = encodeURIComponent(keyword);
-        const fullUrl = `${searchBaseUrl}${encoded}`;
-        window.open(fullUrl, '_blank');
-      }
-    });
-  }
-  // 왼쪽 → 네이버 검색
-  setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
-  // 오른쪽 → 구글 검색
-  setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
-})
-
 document.addEventListener("DOMContentLoaded", () => {
+  // 💡 요소 참조
+  const intro = document.getElementById("intro-screen");
+  const main = document.getElementById("main-content");
+  const bottom = document.querySelector(".bottom-container");
+  const leftBox = document.querySelector(".drop-target-left");
+  const rightBox = document.querySelector(".drop-target-right");
+
+  // ⛔ 초기 상태 숨기기
+  main.style.display = "block";
+  bottom.style.display = "flex";
+
+  // 📊 연도 진행률 표시
   const final = getYearProgress();
   animateProgressBar(final);
 
-  // 📦 초기 화면 전환 + 단어 흐름 시작
+  // 🕓 4초 후 intro 페이드아웃 + 1초 후 본 콘텐츠 표시
   setTimeout(() => {
-    // intro → main 전환
-    document.getElementById("intro-screen").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-    document.getElementById("main").style.display = "block";
-    document.getElementsByClassName("bottom-container")[0].style.display = "block";
+    intro.classList.add("fade-out");
 
-    // ⏳ 약간의 딜레이 후 워드 플로우 시작
     setTimeout(() => {
-      startWordFlow(); // ⭐ 진입과 동시에 단어 흐르게 함
-    }, 100); // DOM 렌더링 시간 확보
-  }, 10000);
+      intro.style.display = "none";
+      main.style.display = "block";
+      bottom.style.display = "flex";
+
+      // 🌊 단어 흐름 시작
+      startWordFlow();
+    }, 500);
+  }, 4000);
+
+  // 🔍 드래그 검색 이벤트 등록
+  setupSearchDropEvent(leftBox, 'https://search.naver.com/search.naver?query=');
+  setupSearchDropEvent(rightBox, 'https://www.google.com/search?q=');
 });
