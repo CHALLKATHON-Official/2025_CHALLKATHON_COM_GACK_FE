@@ -7,15 +7,13 @@
 body {
     color: white;
     overflow-y: auto;
-    margin:0;
-    padding:0;
     font-family: sans-serif;
     display : flex;
     flex-direction: column; 
     min-height : 100vh;
-    background-image: linear-gradient(to right,#F24E1E, #FCD34D);
+    background-image: linear-gradient(to right bottom,#F24E1E, #FCD34D);
 }
-/*진입 페이지*/
+/*main content page*/
 #intro-screen {
     position: fixed;        
     left: 0;
@@ -32,34 +30,31 @@ body {
     transition: opacity 1s ease;
 }
 
-#intro-screen.fade-out {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
 
 #progress-bar-container {
-width: 80%;
-height: 20px;
-background-color: #ddd;
-border-radius: 10px;
-margin: 20px auto;
-overflow: hidden;
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    transition: opacity 1s ease;
 }
 
 #progress-bar {
-height: 100%;
-width: 0%;
-background-color: orange;
-border-radius: 10px;
-transition: width 0.5s ease;
+    height: 100%;
+    width: 0%;
+    background-color: orange;
+    border-radius: 10px;
+    transition: width 0.5s ease;
 }
 
 #progress-percent-text {
-text-align: center;
-font-size: 18px;
-color: black;
-margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+    transition: opacity 1s ease;
 }
 
 
@@ -72,7 +67,6 @@ margin-top: 10px;
     display:flex;
     justify-content: space-around;  
     flex-grow: 1;
-    min-height: 0; 
 }
 
 .drop-target-left,
@@ -90,9 +84,31 @@ margin-top: 10px;
     cursor: pointer;
     padding: 10px 0;
     border: 2px dashed #fff;
-    background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+    background: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
     z-index: 10;
+}
+
+.google-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    width: 60px;  
+    height: auto;
+    pointer-events: none;
+}
+
+.naver-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    width: 200px; 
+    height: auto;
+    pointer-events: none;
 }
 
 .drop-target-left {
@@ -108,14 +124,7 @@ margin-top: 10px;
     background: rgba(255, 255, 255, 0.25);
 }
 
-#toggle-flow-btn {
-    margin: 20px;
-    padding: 6px 12px;
-    font-size: 14px;
-    cursor:pointer;
-}
 
-/*홈페이지*/
 #main-content {
     position: relative;
 }
@@ -152,7 +161,7 @@ margin-top: 10px;
     display: flex;
     align-items: center;
     padding:0 20px;
-    background-color: #222222;
+    background-color: #282828;
     height:66px;
 }
 
@@ -199,28 +208,31 @@ margin-top: 10px;
 }
 
 .category {
-font-size: 18px;
-
+    font-size: 18px;
 }
-
-
 
 .navibar li {
     position: relative;
 }
 
 .navibar a {
-display: block;
-padding: 16px 30px; 
-color: white;
-text-decoration: none;
-background-color: #333;
+    display: block;
+    padding: 16px 30px; 
+    color: white;
+    text-decoration: none;
+    background-color: #333;
 }
 
 .navibar li:hover > a {
     background-color: #555;
 }
 
+#toggle-flow-btn {
+    margin: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor:pointer;
+}
 .filter-status {
     color: white;
     font-size: 14px;
@@ -230,34 +242,33 @@ background-color: #333;
     gap: 10px;
 }
 
-/* 내비게이션 로고*/
 .navibar_logo {
-width: 120px;
-cursor: pointer;
-margin-right: auto;
+    width: 120px;
+    cursor: pointer;
+    margin-right: auto;
 }
 
 .navibar_logo img {
     width: 100%;
     height: auto;
 }
-/*드롭다운 */
+
 .dropdown-content {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-background-color: #444;
-z-index: 10;
-min-width: 160px;
-flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    z-index: 10;
+    min-width: 160px;
+    flex-direction: column;
 }
 
 .dropdown-content li {
-border-bottom: 1px solid #666;
+    border-bottom: 1px solid #666;
 }
 .dropdown-content li:last-child {
-border-bottom: none;  
+    border-bottom: none;  
 }
 
 .dropdown-content a {
@@ -267,30 +278,50 @@ border-bottom: none;
 }
 
 .dropdown-content a:hover {
-background-color: #5a5a5a;
+    background-color: #5a5a5a;
 }
 
 
-/* 드롭다운 작동 트리거 */
 .navibar li:hover > .dropdown-content {
     display: flex;
 }
 
 .bottom-container {
-height : 120px;
-display : flex;
-justify-content: space-between;
-}
-.madeby,.bottom-feedback-link{
-margin: 15px;
-color: white;
-text-decoration: none;   
-transition: color 0.3s; 
-padding : 24px 45px;
-font-size : 22px;
+    position: relative;
+    height: 120px;
+    width: 100%;
+    background: transparent; 
 }
 
-/*feedback*/
+.madeby {
+    position: absolute;
+    margin: 40px;
+    left: 30px;
+    color: white;
+    font-size: 24px;
+}
+
+.bottom-feedback-link {
+    position: absolute;
+    bottom: 50px;
+    right: 70px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+/*feedback page*/
+
+.feedback-container {
+    background-image: linear-gradient(to right top,
+    #d16ba5,#c777b9, #ba83ca, 
+    #aa8fd8,#9a9ae1, #8aa7ec,
+    #79b3f4, #69bff8, #52cffe, 
+    #41dfff, #46eefa, #5ffbf1);
+
+    min-height : 100vh;
+}
 .welcome {
     text-shadow: 2px 3px 0px #898999;
     font-weight: 900;
@@ -304,7 +335,7 @@ font-size : 22px;
     text-decoration: none;
 }
 .email-link > a:hover {
-color: #2FFFAD;
+    color: #2FFFAD;
 }
 .introduce-container {
     font-size : 18px;
@@ -314,14 +345,14 @@ color: #2FFFAD;
 
 /*insta*/
 .insta-link {
-padding : 30px;
-text-decoration: none;     
-color: white;
-margin: 0 8px;               
-transition: color 0.3s;     
+    padding : 30px;
+    text-decoration: none;     
+    color: white;
+    margin: 0 8px;               
+    transition: color 0.3s;     
 }
 .insta-link:hover {
-color: #ffd700;
+    color: #ffd700;
 }
 
 .insta-container {
@@ -330,7 +361,8 @@ color: #ffd700;
 }
 .insta-gradient {
     font-weight: bold;
-    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background: linear-gradient(45deg, #feda75, #fa7e1e, 
+    #d62976, #962fbf, #4f5bd5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -346,15 +378,13 @@ hr {
     width: 100%;
     background-blend-mode: overlay;
 }
-
 .bottom-feedback-container {
-    display: flex;
-    
-
+    height: auto;
+    display : flex;
 }
 .back {
     color : white;
     text-decoration: none;
-    margin: 45px;
-    font-size: 20px;
-}
+    margin: 40px 0 40px 50px;
+    font-size: 24px;
+}   

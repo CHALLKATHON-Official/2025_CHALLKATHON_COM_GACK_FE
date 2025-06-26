@@ -275,11 +275,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("main-content").style.display = "block";
     document.getElementsByClassName("bottom-container")[0].style.display = "block";
 
+    
+
     isPaused = false;
     document.getElementById("toggle-flow-btn").textContent = "정지"
       // 단어 흐름 시작
     setTimeout(() => {
       startWordFlow();
-    },100);
-    }, 10000);
+    },1000);
+    }, 4000);
   });
