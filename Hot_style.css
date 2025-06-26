@@ -287,12 +287,53 @@ body {
 }
 
 .bottom-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     height: 120px;
     width: 100%;
-    background: transparent; 
+    padding: 16px 32px;
+    background: transparent;
+}
+.bottom-container > div,
+.bottom-container > a {
+  flex: 1;
+  text-align: center;
 }
 
+.bottom-container .madeby {
+  text-align: left;
+}
+
+.bottom-container .bottom-feedback-link {
+  text-align: right;
+}
+
+#related-words-box {
+    text-align: center;
+}
+#related-words-box h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+#related-words-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#related-words-list li {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 .madeby {
     position: absolute;
     margin: 40px;

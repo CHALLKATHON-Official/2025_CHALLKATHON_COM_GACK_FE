@@ -1,0 +1,686 @@
+[
+  {
+    "word": "출석",
+    "score": 22,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "특검",
+    "score": 19,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "내란",
+    "score": 75,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "대통령",
+    "score": 90,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "형소법",
+    "score": 45,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "재난",
+    "score": 47,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "산업",
+    "score": 19,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "정부",
+    "score": 22,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "황새",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "정책",
+    "score": 23,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "빌딩",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "협동조합",
+    "score": 27,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "이재명",
+    "score": 35,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "기획",
+    "score": 25,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "치료",
+    "score": 25,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "조사",
+    "score": 39,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "문화",
+    "score": 24,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "전북",
+    "score": 26,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "최종",
+    "score": 23,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "차관",
+    "score": 22,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "대표",
+    "score": 25,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "향후",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "서울",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "지역",
+    "score": 26,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "회부",
+    "score": 20,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "전남",
+    "score": 22,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "재혼",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "인공",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "세계",
+    "score": 24,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "이상",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "성장",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "수소",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "국회",
+    "score": 22,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "인권위",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "위원장",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "아이",
+    "score": 20,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "창업",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "추진",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "사회",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "결제",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "피해",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "대한",
+    "score": 30,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "강남",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "중이",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "수온",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "국방",
+    "score": 27,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "이란",
+    "score": 36,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "가장",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "광주",
+    "score": 32,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "악수",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "부안군",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "취재",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "생산",
+    "score": 16,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "기술",
+    "score": 16,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "병원",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "대응",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "윤석열",
+    "score": 35,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "철강",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "배구",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "감사원",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "보호",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "인천",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "기준",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "국가",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "윤",
+    "score": 52,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "전략",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "지연",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "진행",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "미국",
+    "score": 26,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "인사",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "시장",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "이야기",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "청소년",
+    "score": 17,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "상황",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "핵",
+    "score": 23,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "지난해",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "구속",
+    "score": 29,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "공습",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "시민",
+    "score": 18,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "소환",
+    "score": 36,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "트럼프",
+    "score": 23,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "국민",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "평가",
+    "score": 23,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "법원",
+    "score": 31,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "확보",
+    "score": 27,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "경우",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "비",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "체포영장",
+    "score": 45,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "이전",
+    "score": 15,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "기각",
+    "score": 100,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "의심",
+    "score": 16,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "청구",
+    "score": 30,
+    "period": "25-2",
+    "category": "politics"
+  },
+  {
+    "word": "통보",
+    "score": 21,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "김용현",
+    "score": 62,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "측은",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "랄랄",
+    "score": 93,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  {
+    "word": "외환",
+    "score": 21,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "신병",
+    "score": 19,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "근로장려금",
+    "score": 46,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "도르트문트 대 울산",
+    "score": 92,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "인테르 대 리버 플레이트",
+    "score": 46,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "gemini cli",
+    "score": 92,
+    "period": "25-2",
+    "category": "technology"
+  },
+  {
+    "word": "마지 심슨",
+    "score": 46,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  {
+    "word": "부천국제판타스틱영화제",
+    "score": 46,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  {
+    "word": "심은경",
+    "score": 46,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  {
+    "word": "nba draft",
+    "score": 46,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "뇌르고르",
+    "score": 92,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "inter vs river plate",
+    "score": 46,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "엔비디아",
+    "score": 92,
+    "period": "25-2",
+    "category": "economy"
+  },
+  {
+    "word": "26기 광수",
+    "score": 46,
+    "period": "25-2",
+    "category": "social"
+  },
+  {
+    "word": "지하철 방화",
+    "score": 92,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "토스 행운퀴즈 정답",
+    "score": 46,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  {
+    "word": "제주항공",
+    "score": 46,
+    "period": "25-2",
+    "category": "international"
+  },
+  {
+    "word": "테슬라",
+    "score": 46,
+    "period": "25-2",
+    "category": "economy"
+  }
+]

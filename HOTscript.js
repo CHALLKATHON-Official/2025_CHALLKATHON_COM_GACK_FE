@@ -1,13 +1,5 @@
 let keywords = [];
-
-fetch("트렌드_점수_결과(score 90 이상).json")
-  .then(response => response.json())
-  .then(data => {
-    keywords = data;
-    startWordFlow();
-  })
-  .catch(error => console.error("키워드 JSON 로드 실패:",error));
-
+let dataLoaded = false; // 데이터가 로딩되었는지 유무 판단
 
 let selectedPeriod = "all"; //초기 기간,분야를 전체로 설정
 let selectedCategory = "all";
@@ -208,6 +200,14 @@ document.addEventListener('DOMContentLoaded', function () {
   setupSearchDropEvent(rightBox, 'https://www.google.com/search?q='); // 오른쪽 → 구글 검색
 })
 
+fetch("Hotwords.json") //json 파일 받아와서 keywords에 데이터 넣기, 로딩됬으면 true로 변경
+  .then(response => response.json())
+  .then(data => {
+    keywords = data;
+    dataLoaded = true;
+  })
+  .catch(error => console.error("키워드 JSON 로드 실패:",error));
+
 document.addEventListener("DOMContentLoaded", () => {
   // 요소 참조
   const intro = document.getElementById("intro-screen"); // 인트로 화면
@@ -230,8 +230,50 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementsByClassName("bottom-container")[0].style.display = "block";
     isPaused = false;
     document.getElementById("toggle-flow-btn").textContent = "정지"
-    setTimeout(() => { //DOM 렌더링 후 단어 애니메이션 시작
-      startWordFlow();
-    }, 100);
+    const waitForData = setInterval(() => {
+      if (dataLoaded) {
+        clearInterval(waitForData);
+        updateFilterStatus();
+        restartWordFlow();
+      }
+    },100);
   }, 6000);
 });
+
+let relatedKeywordGroups =[]; //연관단어세트
+let relatedInterval = null;
+let relatedIndex = 0;
+
+fetch("연관단어점수0625_2200.json") //연관단어세트 json 파일 불러오기
+  .then(res => res.json())
+  .then(data => {
+    relatedKeywordGroups = data; // data 불러와서 저장
+    startRelatedWordsRotation(); // 자동 순환 시작
+  })
+  .catch(err => console.error("연관 단어 JSON 로드 실패:", error));
+
+function startRelatedWordsRotation() { // 연관 키워드 데이터가 없으면 함수 종료
+  if (!relatedKeywordGroups.length) return;
+
+  const list = document.getElementById("related-words-list"); // 연관 단어 목록을 표시할 <ul> 요소
+
+  const update = () => { // 연관 단어 목록 갱신
+    const group = relatedKeywordGroups[relatedIndex]; // 현재 인덱스에 해당하는 연관 단어 세트 가져오기
+    list.innerHTML = ""; // 기존 목록 초기화
+
+    for (let i = 1; i <= 5; i++) { // 1~5번까지 연관 단어와 점수를 표시
+      const word = group[`연관단어${i}`];
+      const score = group[`점수${i}`];
+      if (word) {
+        const li = document.createElement("li"); // 새로운 요소 생성
+        li.textContent = `${word} (${score})`;
+        list.appendChild(li); 
+      }
+    }
+
+    relatedIndex = (relatedIndex + 1) % relatedKeywordGroups.length; //다음에 보여줄 인덱스 순환
+  };
+
+  update(); // 초기 표시
+  relatedInterval = setInterval(update, 3000); // 이후 반복
+}

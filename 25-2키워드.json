@@ -1,0 +1,127 @@
+{
+  "출석": {
+    "score": 125,
+    "period": "25-2",
+    "category": "social"
+  },
+  "특검": {
+    "score": 378,
+    "period": "25-2",
+    "category": "social"
+  },
+  "내란": {
+    "score": 507,
+    "period": "25-2",
+    "category": "social"
+  },
+  "사실": {
+    "score": 94,
+    "period": "25-2",
+    "category": "social"
+  },
+  "형소법": {
+    "score": 679,
+    "period": "25-2",
+    "category": "social"
+  },
+  "OpenAI": {
+    "score": 60,
+    "period": "25-2",
+    "category": "technology"
+  },
+  "재난": {
+    "score": 381,
+    "period": "25-2",
+    "category": "environment"
+  },
+  "의료": {
+    "score": 99,
+    "period": "25-2",
+    "category": "health"
+  },
+  "이재명": {
+    "score": 366,
+    "period": "25-2",
+    "category": "politics"
+  },
+  "윤석열": {
+    "score": 496,
+    "period": "25-2",
+    "category": "politics"
+  },
+  "서울": {
+    "score": 113,
+    "period": "25-2",
+    "category": "social"
+  },
+  "산업": {
+    "score": 134,
+    "period": "25-2",
+    "category": "economy"
+  },
+  "기술": {
+    "score": 175,
+    "period": "25-2",
+    "category": "technology"
+  },
+  "환경": {
+    "score": 148,
+    "period": "25-2",
+    "category": "environment"
+  },
+  "이스라엘": {
+    "score": 93,
+    "period": "25-2",
+    "category": "politics"
+  },
+  "전북": {
+    "score": 273,
+    "period": "25-2",
+    "category": "social"
+  },
+  "배구": {
+    "score": 168,
+    "period": "25-2",
+    "category": "sports"
+  },
+  "gemini cli": {
+    "score": 260,
+    "period": "25-2",
+    "category": "technology"
+  },
+  "nba draft": {
+    "score": 130,
+    "period": "25-2",
+    "category": "sports"
+  },
+  "부천국제판타스틱영화제": {
+    "score": 130,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  "심은경": {
+    "score": 130,
+    "period": "25-2",
+    "category": "entertainment"
+  },
+  "테슬라": {
+    "score": 130,
+    "period": "25-2",
+    "category": "economy"
+  },
+  "엔비디아": {
+    "score": 260,
+    "period": "25-2",
+    "category": "technology"
+  },
+  "지하철 방화": {
+    "score": 260,
+    "period": "25-2",
+    "category": "social"
+  },
+  "토스 행운퀴즈 정답": {
+    "score": 130,
+    "period": "25-2",
+    "category": "social"
+  }
+}
